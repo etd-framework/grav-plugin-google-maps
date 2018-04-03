@@ -1,15 +1,15 @@
 name: Google Maps
-version: 1.0.7
+version: 1.0.8
 description: Google Maps plugin for Grav
 icon: code
 author:
-  name: Salvatore Guarino
-  email: sg@deved.it
-homepage: https://github.com/deved-it/grav-plugin-google-maps
-demo: https://github.com/deved-it/grav-plugin-google-maps
+  name: ETD Solutions, based on Salvatore Guarino work (sg@deved.it)
+  email: support@etd-solutions.com
+homepage: https://github.com/etd-framework/grav-plugin-google-maps
+demo: https://github.com/etd-framework/grav-plugin-google-maps
 keywords: grav, plugin, google maps
-bugs: https://github.com/deved-it/grav-plugin-google-maps/issues
-readme: https://github.com/deved-it/grav-plugin-google-maps/blob/master/README.md
+bugs: https://github.com/etd-framework/grav-plugin-google-maps/issues
+readme: https://github.com/etd-framework/grav-plugin-google-maps/blob/master/README.md
 license: MIT
 
 dependencies:
