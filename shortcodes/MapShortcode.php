@@ -21,8 +21,8 @@ class MapShortcode extends Shortcode
             }
 
             // Add assets
-            $this->grav['assets']->addJs($remote . 'maps.googleapis.com/maps/api/js' . $apikeystring, null, true, null, 'bottom');
-            $this->grav['assets']->addJs('plugin://google-maps/js/google-maps.js', null, true, null, 'bottom');
+            $this->grav['assets']->addJs($remote . 'maps.googleapis.com/maps/api/js' . $apikeystring, 75, true, null, 'bottom');
+            $this->grav['assets']->addJs('plugin://google-maps/js/google-maps.js', 75, true, null, 'bottom');
             $hash = $this->shortcode->getId($sc);
             $infowindow = $sc->getContent();
 
