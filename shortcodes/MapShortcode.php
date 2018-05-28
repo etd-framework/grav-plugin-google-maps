@@ -19,7 +19,7 @@ class MapShortcode extends Shortcode
 
             $output = $this->twig->processTemplate('partials/google-maps.html.twig', [
                 'hash' => $hash,
-                'apikeyrstring' => $apikeystring,
+                'apikeystring' => $apikeystring,
                 'width' => $sc->getParameter('width', '600px'),
                 'height' => $sc->getParameter('height', '400px'),
                 'lat' => $sc->getParameter('lat', 44.540),
