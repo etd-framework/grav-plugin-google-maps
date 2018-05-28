@@ -1,5 +1,5 @@
-<script src="https://maps.googleapis.com/maps/api/js{{ apikeystring }}"></script>
-<script src="{{ url('plugin://google-maps/js/google-maps.js') }}" async defer></script>
+{% do assets.addJs('https://maps.googleapis.com/maps/api/js' ~ apikeystring, {'priority': 25, 'group': 'bottom'}) %}
+{% do assets.addDeferJs('plugin://google-maps/js/google-maps.js' ~ apikeystring, {'priority': 25, 'group': 'bottom'}) %}
 <div id="map-{{ hash }}" class="google-map" style="width: {{ width }}; height: {{ height }}"
      data-lat="{{ lat }}"
      data-lng="{{ lng }}"
