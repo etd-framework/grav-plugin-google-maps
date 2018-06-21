@@ -14,11 +14,9 @@ class MapShortcode extends Shortcode
         $apikeystring = ($apikey) ? "?key=$apikey" : "";
         $this->shortcode->getHandlers()->add('google-maps', function(ShortcodeInterface $sc) use ($apikeystring) {
 
-            $hash = $this->shortcode->getId($sc);
             $infowindow = $sc->getContent();
 
             $output = $this->twig->processTemplate('partials/google-maps.html.twig', [
-                'hash' => $hash,
                 'apikeystring' => $apikeystring,
                 'width' => $sc->getParameter('width', '600px'),
                 'height' => $sc->getParameter('height', '400px'),

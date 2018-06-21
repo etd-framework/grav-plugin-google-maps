@@ -1,41 +1,40 @@
-jQuery(document).ready(function ($) {
-    var $mapDivs = $('.google-map');
-    $mapDivs.each(function (index) {
-        var lat = parseFloat($(this).data('lat'));
-        var lng = parseFloat($(this).data('lng'));
-        var zoom = parseInt($(this).data('zoom'));
-        var scrollwheel = Boolean($(this).data('scrollwheel'));
-        var draggable = Boolean($(this).data('draggable'));
-        var pancontrol = Boolean($(this).data('pancontrol'));
-        var icon = $(this).data('iconurl');
-        var window = $(this).data('infowindow');
+// Initialize and add the map
+function initMap() {
 
-        var map = new google.maps.Map(this, {
-            center: {lat: lat, lng: lng},
-            zoom: zoom,
-            scrollwheel: scrollwheel,
-            draggable: draggable,
-            panControl: pancontrol
-        });
+    var gmap = document.getElementById('gmap');
+    var position = {lat: parseFloat(gmap.dataset.lat), lng: parseFloat(gmap.dataset.lng)};
+    var zoom = parseInt(gmap.dataset.zoom);
+    var scrollwheel = Boolean(gmap.dataset.scrollwheel);
+    var draggable = Boolean(gmap.dataset.draggable);
+    var pancontrol = Boolean(gmap.dataset.pancontrol);
+    var icon = gmap.dataset.iconurl;
+    var window = gmap.dataset.infowindow;
 
-        var marker = new google.maps.Marker({
-            position: {lat: lat, lng: lng},
-            icon: icon,
-            map: map,
-            animation: google.maps.Animation.DROP,
-            title: 'Hello World!'
-        });
-
-        if (window) {
-            var infowindow = new google.maps.InfoWindow({
-                content: window
-            });
-
-            marker.addListener('click', function () {
-                infowindow.open(map, marker);
-            });
-
-            infowindow.open(map, marker);
-        }
+    var map = new google.maps.Map(gmap, {
+        center: position,
+        zoom: zoom,
+        scrollwheel: scrollwheel,
+        draggable: draggable,
+        panControl: pancontrol
     });
-});
+
+    var marker = new google.maps.Marker({
+        position: position,
+        icon: icon,
+        map: map,
+        animation: google.maps.Animation.DROP,
+        title: 'Hello World!'
+    });
+
+    if (window) {
+        var infowindow = new google.maps.InfoWindow({
+            content: window
+        });
+
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+
+        infowindow.open(map, marker);
+    }
+}
