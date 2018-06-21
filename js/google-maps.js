@@ -1,4 +1,4 @@
-jQuery(document).ready(function () {
+jQuery(document).ready(function ($) {
     var $mapDivs = $('.google-map');
     $mapDivs.each(function (index) {
         var lat = parseFloat($(this).data('lat'));
